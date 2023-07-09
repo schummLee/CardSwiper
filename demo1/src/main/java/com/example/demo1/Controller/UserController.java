@@ -1,4 +1,4 @@
-package com.example.demo1.Controllers;
+package com.example.demo1.Controller;
 
 @RestController
 @RequestMapping("/users")
