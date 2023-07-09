@@ -4,21 +4,16 @@ package com.example.demo1.Controller;
 @RequestMapping("/users")
 public class MyRestController {
 
-    private final UserRepository userRepository; private final CustomerRepository customerRepository;
+    private final UserRepositories userRepositories;
 
-    public MyRestController(UserRepository userRepository, CustomerRepository customerRepository) {
-        this.userRepository = userRepository; this.customerRepository = customerRepository;
+    public MyRestController(UserRepositories userRepositories) {
+        this.userRepositories = userRepositories; 
     }
 
     @GetMapping("/{userId}")
-    public User getUser(@PathVariable Long userId) {return this.userRepository.findById(userId).get();}
-
-    @GetMapping("/{userId}/customers")
-    public List<Customer> getUserCustomers(@PathVariable Long userId) {
-        return this.userRepository.findById(userId).map(this.customerRepository::findByUser).get();
-    }
+    public User getUser(@PathVariable Long userId) {return this.userRepositories.findById(userId).get();}
 
     @DeleteMapping("/{userId}")
-    public void deleteUser(@PathVariable Long userId) { this.userRepository.deleteById(userId); }
+    public void deleteUser(@PathVariable Long userId) { this.userRepositories.deleteById(userId); }
 
 }

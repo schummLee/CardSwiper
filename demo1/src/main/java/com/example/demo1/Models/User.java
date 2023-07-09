@@ -10,18 +10,45 @@ public class User {
     private Long cardId;
 
 
-    public getId(id) { return id; }
+    public Long getId() { return id; }
 
-    public setId(id) { this.id = id; }
+    public void setId(Long id) { this.id = id; }
 
-    public getName(name) { return name; }
+    public String getName() { return name; }
 
-    public setName(name) { this.name = name; }
+    public void setName(String name) { this.name = name; }
 
-    public getCardId(cardId) { return cardId; }
+    public Long getCardId() { return cardId; }
 
-    public setCardId(cardId) { this.cardId = id; }
+    public void setCardId(Long cardId) { this.cardId = cardId; }
 
-    public ToString() {}
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cardId=" + cardId +
+                '}';
+    }
+}
+public class UserWithoutId {
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String name;
+    private Long cardId;
+
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
+
+    public Long getCardId() { return cardId; }
+
+    public void setCardId(Long cardId) { this.cardId = cardId; }
+
+    public String toString() {
+        return "User{" +
+                ", name='" + name + '\'' +
+                ", cardId=" + cardId +
+                '}';
+    
+    }
 }
 
