@@ -30,7 +30,7 @@ public class User {
                 '}';
     }
 }
-public class UserWithoutId {
+private class UserWithoutId {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String name;
     private Long cardId;

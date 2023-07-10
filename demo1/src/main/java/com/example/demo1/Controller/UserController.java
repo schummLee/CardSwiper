@@ -1,8 +1,9 @@
 package com.example.demo1.Controller;
+import com.example.demo1.Repositories.UserRepositories;
 
 @RestController
 @RequestMapping("/users")
-public class MyRestController {
+public class UserController {
 
     private final UserRepositories userRepositories;
 
